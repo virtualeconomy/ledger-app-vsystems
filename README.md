@@ -26,16 +26,22 @@ make BOLOS_ENV=/opt/ledger-blue/ BOLOS_SDK=/home/nanos-secure-sdk
 ```
 
 ## Install to your Ledger device
-Open other terminal and make sure these following libraries are installed.
+Quit docker instance or open other terminal. Make sure these following libraries are installed.
 
 ```
 sudo apt-get install libudev-dev libusb-1.0-0-dev python-dev virtualenv zlib1g-dev
 ```
 
-To avoid hid conflict issue, we'd better setup and run `ledgerblue` in python virtual environment:
+Go to your workspace and make sure you have access right to the workspace:
 
 ```
 cd ~/workspace/ledger/ledger-app-vsystems
+sudo chown -R <user>:<user> .
+```
+
+To avoid hid conflict issue, we'd better setup and run `ledgerblue` in python virtual environment:
+
+```
 virtualenv venv
 source venv/bin/activate
 pip install --upgrade setuptools
@@ -44,7 +50,7 @@ pip install --upgrade cython
 pip install ledgerblue
 ```
 
-On Linux you need to create a set of udev rules to allow device access. To grand access permision, you need run:
+On Linux you need to create a set of udev rules to allow device access. To grant access permision, you need run:
 
 ```
 sudo groupadd plugdev
