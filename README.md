@@ -44,6 +44,16 @@ pip install --upgrade cython
 pip install ledgerblue
 ```
 
+On Linux you need to create a set of udev rules to allow device access. To grand access permision, you need run:
+
+```
+sudo groupadd plugdev
+sudo gpasswd -a <user> plugdev
+wget -q -O - https://raw.githubusercontent.com/LedgerHQ/udev-rules/master/add_udev_rules.sh | sudo bash
+```
+
+Note: If connection issue is still happend, please refer [here](https://support.ledger.com/hc/en-us/articles/115005165269-What-if-Ledger-Wallet-is-not-recognized-on-Linux-) to solve.
+
 Now install app to your ledger. Connect ledger to PC. Enter PIN to unlock screen and be on the main menu screen. And then
 
 ```
