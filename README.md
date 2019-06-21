@@ -65,3 +65,6 @@ Now install app to your ledger. Connect ledger to PC. Enter PIN to unlock screen
 ```
 python -m ledgerblue.loadApp --appFlags 0x40 --path "44'/360'" --curve secp256k1 --curve ed25519 --tlv --targetId 0x31100004 --delete --fileName bin/app.hex --appName "VSYS" --appVersion 1.0.0 --icon 0100000000ffffff00ffffffffffffffffc7e38fe31ff71fff3ffe7ffe7ffefffeffffffffffffffff --dataSize `cat debug/app.map |grep _nvram_data_size | tr -s ' ' | cut -f2 -d' '` 
 ```
+
+## Test
+After install successfully, you can start to use ledger hardware to do the payment and leasing. To test payment and leasing, please refer [here](https://github.com/virtualeconomy/vsystems-ledger-js).
